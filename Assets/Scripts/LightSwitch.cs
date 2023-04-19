@@ -66,7 +66,7 @@ public class LightSwitch : MonoBehaviour
     }
 
     /// <summary>
-    /// Happens when the player is not looking at the switch.
+    /// Happens when the player looks away from the switch.
     /// </summary>
     /// <param name="other">Colider triggering the method.</param>
     private void OnTriggerExit(Collider other)
@@ -79,7 +79,7 @@ public class LightSwitch : MonoBehaviour
     }
 
     /// <summary>
-    /// Happens all the time.
+    /// Happens all the time (in every frame).
     /// </summary>
     private void Update()
     {
