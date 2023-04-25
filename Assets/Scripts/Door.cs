@@ -14,6 +14,16 @@ public class Door : MonoBehaviour
     public GameObject intText;
 
     /// <summary>
+    /// The key card.
+    /// </summary>
+    public GameObject keyCard;
+
+    /// <summary>
+    /// Text saying that the door is locked.
+    /// </summary>
+    public GameObject lockedText;
+
+    /// <summary>
     /// Determines if the door can be interacted with or not.
     /// </summary>
     public bool interactable;
@@ -60,22 +70,37 @@ public class Door : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                toggle = !toggle;
-                if (toggle)
+                if (!keyCard.activeSelf)
                 {
-                    doorAnim.ResetTrigger("close");
-                    doorAnim.SetTrigger("open");
-                }
+                    toggle = !toggle;
+                    if (toggle)
+                    {
+                        doorAnim.ResetTrigger("close");
+                        doorAnim.SetTrigger("open");
+                    }
 
-                if (!toggle)
+                    if (!toggle)
+                    {
+                        doorAnim.ResetTrigger("open");
+                        doorAnim.SetTrigger("close");
+                    }
+
+                    intText.SetActive(false);
+                    interactable = false;
+                }
+                if (keyCard.activeSelf)
                 {
-                    doorAnim.ResetTrigger("open");
-                    doorAnim.SetTrigger("close");
+                    lockedText.SetActive(true);
+                    StopCoroutine("DisableText");
+                    StartCoroutine("DisableText");
                 }
-
-                intText.SetActive(false);
-                interactable = false;
             }
         }
+    }
+
+    IEnumerator DisableText()
+    {
+        yield return new WaitForSeconds(2.0f);
+        lockedText.SetActive(false);
     }
 }
