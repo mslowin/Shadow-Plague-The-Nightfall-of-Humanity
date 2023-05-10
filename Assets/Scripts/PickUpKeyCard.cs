@@ -28,6 +28,16 @@ public class PickUpKeyCard : MonoBehaviour
     public bool interactable;
 
     /// <summary>
+    /// Determines whether a scarry should happen after picking up the key.
+    /// </summary>
+    public bool scarryEvent;
+
+    /// <summary>
+    /// Game object containing the blood stains.
+    /// </summary>
+    public GameObject bloodStains;
+
+    /// <summary>
     /// Happens when the player looks at the key card.
     /// </summary>
     /// <param name="other">Colider triggering the method.</param>
@@ -65,6 +75,10 @@ public class PickUpKeyCard : MonoBehaviour
                 intText.SetActive(false);
                 interactable = false;
                 //// pickupSound.Play();
+                if (scarryEvent)
+                {
+                    bloodStains.SetActive(true);
+                }
                 keyCard.SetActive(false);
             }
         }
