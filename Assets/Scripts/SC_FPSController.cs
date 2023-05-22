@@ -28,6 +28,17 @@ public class SC_FPSController : MonoBehaviour
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        if (PlayerPrefs.GetInt("continue") == 1)
+        {
+            SaveData data = SavingSystem.LoadData();
+
+            Vector3 position;
+            position.x = data.position[0];
+            position.y = data.position[1];
+            position.z = data.position[2];
+            transform.position = position;
+        }
     }
 
     void Update()
