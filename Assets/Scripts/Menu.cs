@@ -29,7 +29,7 @@ public class Menu : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerPrefs.GetInt("level") == 0)
+        if (PlayerPrefs.GetInt("continue") == 0)
         {
             continueButton.interactable = false;
         }
@@ -51,7 +51,8 @@ public class Menu : MonoBehaviour
     public void PlayGame()
     {
         loadingScreen.SetActive(true);
-        PlayerPrefs.SetInt("level", 1);
+        // PlayerPrefs.SetInt("level", 1);
+        PlayerPrefs.SetInt("continue", 0);
         SceneManager.LoadScene(sceneName);
     }
 

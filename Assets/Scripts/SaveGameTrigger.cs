@@ -10,6 +10,7 @@ public class SaveGameTrigger: MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            PlayerPrefs.SetInt("continue", 1);
             SavingSystem.SaveGame(player);
         }
     }

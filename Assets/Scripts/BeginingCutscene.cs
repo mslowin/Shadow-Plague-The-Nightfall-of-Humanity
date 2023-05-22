@@ -24,7 +24,18 @@ public class BeginingCutscene : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(cutscene());
+        // when pressing continue we don't want the begining cutscene to play
+        if (PlayerPrefs.GetInt("continue") == 1)
+        {
+            cutsceneCam.SetActive(false);
+            player.SetActive(true);
+        }
+
+        // when pressing New Game we want the cutcene to play
+        if (PlayerPrefs.GetInt("continue") == 0)
+        {
+            StartCoroutine(cutscene());
+        }
     }
 
     IEnumerator cutscene()
