@@ -23,6 +23,10 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt("continue") == 0)
+        {
+            continueButton.interactable = false;
+        }
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }

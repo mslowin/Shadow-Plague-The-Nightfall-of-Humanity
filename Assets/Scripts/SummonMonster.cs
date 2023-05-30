@@ -14,13 +14,21 @@ public class SummonMonster : MonoBehaviour
     /// </summary>
     public Collider collision;
 
+    private void Start()
+    {
+        if (PlayerPrefs.GetInt("continue") == 1)
+        {
+            monster.SetActive(true);
+        }
+    }
+
     /// <summary>
     /// Happens upon entering a collider.
     /// </summary>
     /// <param name="other">The collider.</param>
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             monster.SetActive(true);
         }

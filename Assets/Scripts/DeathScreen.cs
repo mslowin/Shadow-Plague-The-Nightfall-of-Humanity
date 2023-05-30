@@ -23,6 +23,7 @@ public class DeathScreen : MonoBehaviour
     IEnumerator LoadToMenu()
     {
         yield return new WaitForSeconds(waitTime);
+        PlayerPrefs.SetInt("continue", 0);
         SceneManager.LoadScene(menuSceneName);
     }
 }
