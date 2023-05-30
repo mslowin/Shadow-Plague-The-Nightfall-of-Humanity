@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
@@ -15,18 +16,43 @@ public class Menu : MonoBehaviour
     /// </summary>
     public string sceneName;
 
+    /// <summary>
+    /// The CONTINUE button.
+    /// </summary>
+    public Button continueButton;
+
     private void Start()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
 
+    private void Update()
+    {
+        if (PlayerPrefs.GetInt("continue") == 0)
+        {
+            continueButton.interactable = false;
+        }
+    }
+
+    public void continueGame()
+    {
+        loadingScreen.SetActive(true);
+
+        PlayerPrefs.SetInt("continue", 1);
+
+        SceneManager.LoadScene(sceneName);
+
+    }
+
     /// <summary>
-    /// Called when PLAY button is pressed.
+    /// Called when NEW GAME button is pressed.
     /// </summary>
     public void PlayGame()
     {
         loadingScreen.SetActive(true);
+        // PlayerPrefs.SetInt("level", 1);
+        PlayerPrefs.SetInt("continue", 0);
         SceneManager.LoadScene(sceneName);
     }
 
