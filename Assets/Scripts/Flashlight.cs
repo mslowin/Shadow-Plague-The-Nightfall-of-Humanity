@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Flashlight : MonoBehaviour
 {
@@ -18,6 +20,27 @@ public class Flashlight : MonoBehaviour
     /// Sound of a flashlight turning ON and OFF.
     /// </summary>
     public AudioSource toggleSound;
+
+    /// <summary>
+    /// Battery bar image.
+    /// </summary>
+    public Image barImage;
+
+    /// <summary>
+    /// Battery bar fill.
+    /// </summary>
+    public double barFillAmount = 1;
+
+    /// <summary>
+    /// Speed of Battery bar decrease.
+    /// </summary>
+    public float barDecrease = 10f;
+
+    /// <summary>
+    /// Number of batteries.
+    /// </summary>
+    public TMP_Text batteriesNumberText;
+
 
     /// <summary>
     /// Happens before first render.
@@ -40,19 +63,43 @@ public class Flashlight : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            toggle = !toggle;
-            //// toggleSound.Play();
-            if (!toggle)
-            {
-                lightObject.SetActive(false);
-            }
+        int batteriesnum = int.Parse(batteriesNumberText.text);
 
-            if (toggle)
+        if (barImage.fillAmount > 0)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                lightObject.SetActive(true);
+                toggle = !toggle;
+                //// toggleSound.Play();
+                if (!toggle)
+                {
+                    lightObject.SetActive(false);
+                }
+
+                if (toggle)
+                {
+                    lightObject.SetActive(true);
+                }
             }
+        }
+        else
+        {
+            lightObject.SetActive(false);
+        }
+
+        // Bar dropping down over time
+        if (toggle && barImage.fillAmount > 0)
+        {
+            barImage.fillAmount -= barDecrease * Time.deltaTime;
+            barImage.fillAmount = Mathf.Clamp01(barImage.fillAmount);
+        }
+
+        // Reloading batteries
+        if (Input.GetKeyDown(KeyCode.R) && batteriesnum > 0)
+        {
+            barImage.fillAmount = 1;
+            batteriesnum -= 1;
+            batteriesNumberText.text = batteriesnum.ToString();
         }
     }
 }
