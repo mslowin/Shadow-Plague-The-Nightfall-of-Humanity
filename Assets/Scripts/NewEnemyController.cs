@@ -20,7 +20,8 @@ public class NewEnemyController : MonoBehaviour
     /// </summary>
     Vector3 dest;
 
-    //public float moveSpeed = 5f;
+    public float moveSpeed;
+
     public float rangeOfSight = 5f;
 
     private void Start()
@@ -47,7 +48,11 @@ public class NewEnemyController : MonoBehaviour
         {
             dest = player.position;
             ai.destination = dest;
-
+            ai.speed = moveSpeed;
+        }
+        else
+        {
+            ai.speed = 0f; // Stop the enemy's movement if player is out of range
         }
     }
 }

@@ -17,6 +17,11 @@ public class Flashlight : MonoBehaviour
     public bool toggle;
 
     /// <summary>
+    /// The trigger that can be disabled when the light is.
+    /// </summary>
+    public GameObject slowDownTrigger;
+
+    /// <summary>
     /// Sound of a flashlight turning ON and OFF.
     /// </summary>
     public AudioSource toggleSound;
@@ -81,11 +86,13 @@ public class Flashlight : MonoBehaviour
                 if (!toggle)
                 {
                     lightObject.SetActive(false);
+                    slowDownTrigger.SetActive(false);
                 }
 
                 if (toggle)
                 {
                     lightObject.SetActive(true);
+                    slowDownTrigger.SetActive(true);
                 }
             }
         }
