@@ -47,6 +47,13 @@ public class Flashlight : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        if (PlayerPrefs.GetInt("continue") == 1)
+        {
+            SaveData data = SavingSystem.LoadData();
+            batteriesNumberText.text = data.batteriesNumber.ToString();
+            barImage.fillAmount = data.batteryBarFillAmount;
+        }
+
         if (!toggle)
         {
             lightObject.SetActive(false);
