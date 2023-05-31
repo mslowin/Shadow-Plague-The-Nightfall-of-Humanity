@@ -25,8 +25,16 @@ public class NewEnemyController : MonoBehaviour
 
     private void Start()
     {
-        // Get a reference to the player's transform
-        //player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (PlayerPrefs.GetInt("continue") == 1)
+        {
+            SaveData data = SavingSystem.LoadData();
+
+            Vector3 position;
+            position.x = data.positionMonster[0];
+            position.y = data.positionMonster[1];
+            position.z = data.positionMonster[2];
+            transform.position = position;
+        }
     }
 
     private void Update()
