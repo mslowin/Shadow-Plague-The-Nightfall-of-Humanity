@@ -90,6 +90,7 @@ public class Door : MonoBehaviour
                 }
                 if (keyCard.activeSelf)
                 {
+                    FindObjectOfType<AudioManager>().Play("Dial_DoorClosed");
                     lockedText.SetActive(true);
                     StopCoroutine("DisableText");
                     StartCoroutine("DisableText");

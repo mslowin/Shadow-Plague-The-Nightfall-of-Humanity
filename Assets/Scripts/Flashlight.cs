@@ -39,7 +39,7 @@ public class Flashlight : MonoBehaviour
     /// <summary>
     /// Speed of Battery bar decrease.
     /// </summary>
-    public float barDecrease = 10f;
+    public float barDecrease = 0.005f;
 
     /// <summary>
     /// Number of batteries.
@@ -109,11 +109,18 @@ public class Flashlight : MonoBehaviour
         }
 
         // Reloading batteries
-        if (Input.GetKeyDown(KeyCode.R) && batteriesnum > 0)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            barImage.fillAmount = 1;
-            batteriesnum -= 1;
-            batteriesNumberText.text = batteriesnum.ToString();
+            if (batteriesnum > 0)
+            {
+                barImage.fillAmount = 1;
+                batteriesnum -= 1;
+                batteriesNumberText.text = batteriesnum.ToString();
+            }
+            else
+            {
+                FindObjectOfType<AudioManager>().Play("Dial_NoBatteriesR");
+            }
         }
     }
 }

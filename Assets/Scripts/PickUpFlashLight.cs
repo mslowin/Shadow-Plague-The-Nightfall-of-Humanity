@@ -69,6 +69,7 @@ public class PickUpFlashLight : MonoBehaviour
             {
                 intText.SetActive(false);
                 interactable = false;
+                FindObjectOfType<AudioManager>().Play("Dial_LatarkaFound");
                 //// pickupSound.Play();
                 flashLight_Hand.SetActive(true);
                 flashLight_Table.SetActive(false);

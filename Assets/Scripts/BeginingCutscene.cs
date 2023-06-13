@@ -27,6 +27,7 @@ public class BeginingCutscene : MonoBehaviour
         // when pressing continue we don't want the begining cutscene to play
         if (PlayerPrefs.GetInt("continue") == 1)
         {
+            FindObjectOfType<AudioManager>().Play("Msc_Background");
             cutsceneCam.SetActive(false);
             player.SetActive(true);
         }
@@ -34,6 +35,8 @@ public class BeginingCutscene : MonoBehaviour
         // when pressing New Game we want the cutcene to play
         if (PlayerPrefs.GetInt("continue") == 0)
         {
+            FindObjectOfType<AudioManager>().Play("Msc_Background");
+            FindObjectOfType<AudioManager>().Play("Dial_Wstep");
             StartCoroutine(cutscene());
         }
     }

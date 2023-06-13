@@ -74,7 +74,7 @@ public class PickUpKeyCard : MonoBehaviour
             {
                 intText.SetActive(false);
                 interactable = false;
-                //// pickupSound.Play();
+                FindObjectOfType<AudioManager>().Play("Dial_CardFound");
                 if (scarryEvent)
                 {
                     bloodStains.SetActive(true);
