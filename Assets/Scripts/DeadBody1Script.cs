@@ -12,12 +12,12 @@ public class DeadBody1Script : MonoBehaviour
     public GameObject intText;
 
     /// <summary>
-    /// Determines whether or not the player is looking at the key card.
+    /// Determines whether or not the player is looking at the object.
     /// </summary>
     public bool interactable;
 
     /// <summary>
-    /// Happens when the player looks at the key card.
+    /// Happens when the player looks at the object.
     /// </summary>
     /// <param name="other">Colider triggering the method.</param>
     public void OnTriggerStay(Collider other)
@@ -30,7 +30,7 @@ public class DeadBody1Script : MonoBehaviour
     }
 
     /// <summary>
-    /// Happens when the player looks away from the key card.
+    /// Happens when the player looks away from the object.
     /// </summary>
     /// <param name="other">Colider triggering the method.</param>
     public void OnTriggerExit(Collider other)
@@ -49,7 +49,18 @@ public class DeadBody1Script : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //PlaySound     
+                if(deadBody.name.Contains("1"))
+                {
+                    FindObjectOfType<AudioManager>().Play("Dial_DeadBody1");
+                }  
+                if(deadBody.name.Contains("2"))
+                {
+                    FindObjectOfType<AudioManager>().Play("Dial_DeadBody2");
+                }  
+                if(deadBody.name.Contains("3"))
+                {
+                    FindObjectOfType<AudioManager>().Play("Dial_DeadBody3");
+                }  
             }
         }
     }

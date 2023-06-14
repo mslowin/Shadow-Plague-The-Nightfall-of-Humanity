@@ -73,18 +73,31 @@ public class PickUpNote : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 toggle = !toggle;
-                if (!toggle)
+                if (toggle)
                 {
                     note.SetActive(true);
                     player.enabled = false;
                     camera.enabled = false;
                 }
 
-                if (toggle)
+                if (!toggle)
                 {
                     note.SetActive(false);
                     player.enabled = true;
                     camera.enabled = true;
+
+                    if (note.name.Contains("2"))
+                    {
+                        FindObjectOfType<AudioManager>().Play("Dial_Note2");
+                    }
+                    if (note.name.Contains("3"))
+                    {
+                        FindObjectOfType<AudioManager>().Play("Dial_Note3");
+                    }
+                    if (note.name.Contains("4"))
+                    {
+                        FindObjectOfType<AudioManager>().Play("Dial_Note4");
+                    }
                 }           
             }
         }
