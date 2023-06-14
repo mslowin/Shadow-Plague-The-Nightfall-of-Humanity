@@ -26,6 +26,10 @@ public class SC_FPSController : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
+    private bool isStanding = true;
+
+    private bool wasRunning = false;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -54,27 +58,46 @@ public class SC_FPSController : MonoBehaviour
         Vector3 right = transform.TransformDirection(Vector3.right);
         // Press Left Shift to run
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
+
+        bool isMoving = Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0;
+
+        if (isMoving && isStanding)
+        {
+            // Player started moving, play walking sound
+            FindObjectOfType<AudioManager>().PlayNotInteruptable("FX_Walking");
+            isStanding = false;
+            wasRunning = false;
+        }
+        else if (!isMoving && !isStanding)
+        {
+            // Player stopped moving, stop walking sound
+            FindObjectOfType<AudioManager>().StopSound("FX_Walking");
+            isStanding = true;
+            wasRunning = false;
+        }
+
+        if (isMoving && isRunning && FindObjectOfType<AudioManager>().isPlayingSound("FX_Running") == false)
+        {
+            // Player started running, play running sound
+            FindObjectOfType<AudioManager>().StopSound("FX_Walking");
+            FindObjectOfType<AudioManager>().PlayNotInteruptable("FX_Running");
+            wasRunning = true;
+        }
+        else if ((!isMoving || !isRunning) && FindObjectOfType<AudioManager>().isPlayingSound("FX_Running") == true)
+        {
+            // Player stopped running, stop running sound
+            FindObjectOfType<AudioManager>().StopSound("FX_Running");
+            wasRunning = false;
+        }
+        else if (isMoving && wasRunning)
+        {
+            FindObjectOfType<AudioManager>().PlayNotInteruptable("FX_Walking");
+        }
+
         float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-
-        // if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
-        // {
-        //     moveDirection.y = jumpSpeed;
-        // }
-        // else
-        // {
-        //     moveDirection.y = movementDirectionY;
-        // }
-
-        // // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
-        // // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
-        // // as an acceleration (ms^-2)
-        // if (!characterController.isGrounded)
-        // {
-        //     moveDirection.y -= gravity * Time.deltaTime;
-        // }
 
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);

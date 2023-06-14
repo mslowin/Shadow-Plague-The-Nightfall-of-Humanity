@@ -33,6 +33,18 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    public void PlayNotInteruptable (string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Nie znaleziono dźwięku: " + name);
+            return;
+        }
+        
+        s.source.Play();
+    }
+
     private void StopDialogueSounds ()
     {
         foreach (Sound s in sounds)
@@ -42,5 +54,28 @@ public class AudioManager : MonoBehaviour
                 s.source.Stop();
             }
         }
+    }
+
+    public void StopSound (string name)
+    {
+        foreach (Sound s in sounds)
+        {
+            if (s.source.isPlaying && s.name == name)
+            {
+                s.source.Stop();
+            }
+        }
+    }
+
+    public bool isPlayingSound (string name)
+    {
+        foreach (Sound s in sounds)
+        {
+            if (s.source.isPlaying && s.name == name)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
