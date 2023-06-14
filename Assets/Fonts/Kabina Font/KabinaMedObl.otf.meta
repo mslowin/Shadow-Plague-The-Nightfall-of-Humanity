@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 4346e24ecc9062c41a9dd5c7b57c405d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Kabina
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 11d934988687928439a425b13939b33e, type: 3}
+  - {fileID: 12800000, guid: 1272a1086c9b6a945b5bb9ebdb6f0c0e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
