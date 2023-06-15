@@ -16,7 +16,7 @@ public class ENDINGTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerPrefs.SetInt("continue", 0);
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("Credits");
         }
     }
 }
