@@ -16,6 +16,9 @@ public class ENDINGTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerPrefs.SetInt("continue", 0);
+            PlayerPrefs.SetInt("deadBody1Found", 0);
+            PlayerPrefs.SetInt("deadBody2Found", 0);
+            PlayerPrefs.SetInt("deadBody3Found", 0);
             SceneManager.LoadScene("Credits");
         }
     }

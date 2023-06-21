@@ -57,6 +57,9 @@ public class Menu : MonoBehaviour
         loadingScreen.SetActive(true);
         // PlayerPrefs.SetInt("level", 1);
         PlayerPrefs.SetInt("continue", 0);
+        PlayerPrefs.SetInt("deadBody1Found", 0);
+        PlayerPrefs.SetInt("deadBody2Found", 0);
+        PlayerPrefs.SetInt("deadBody3Found", 0);
         SceneManager.LoadScene(sceneName);
     }
 

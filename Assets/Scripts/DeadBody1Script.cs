@@ -12,6 +12,11 @@ public class DeadBody1Script : MonoBehaviour
     public GameObject intText;
 
     /// <summary>
+    /// A wall to disapear when all bodies have been found.
+    /// </summary>
+    public GameObject wall;
+
+    /// <summary>
     /// Determines whether or not the player is looking at the object.
     /// </summary>
     public bool interactable;
@@ -51,17 +56,25 @@ public class DeadBody1Script : MonoBehaviour
             {
                 if(deadBody.name.Contains("1"))
                 {
+                    PlayerPrefs.SetInt("deadBody1Found", 1);
                     FindObjectOfType<AudioManager>().Play("Dial_DeadBody1");
                 }  
                 if(deadBody.name.Contains("2"))
                 {
+                    PlayerPrefs.SetInt("deadBody2Found", 1);
                     FindObjectOfType<AudioManager>().Play("Dial_DeadBody2");
                 }  
                 if(deadBody.name.Contains("3"))
                 {
+                    PlayerPrefs.SetInt("deadBody3Found", 1);
                     FindObjectOfType<AudioManager>().Play("Dial_DeadBody3");
                 }  
             }
+        }
+
+        if (PlayerPrefs.GetInt("deadBody1Found") == 1 && PlayerPrefs.GetInt("deadBody2Found") == 1 && PlayerPrefs.GetInt("deadBody3Found") == 1)
+        {
+            wall.SetActive(false);
         }
     }
 }
