@@ -11,6 +11,11 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
 
     /// <summary>
+    /// The Options Menu object.
+    /// </summary>
+    public GameObject optionsMenu;
+
+    /// <summary>
     /// Name of the main menu scene.
     /// </summary>
     public string sceneName;
@@ -64,6 +69,19 @@ public class PauseMenu : MonoBehaviour
         playerScript.enabled = true;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    /// <summary>
+    /// When SETTINGS button is pressed.
+    /// </summary>
+    public void Settings()
+    {
+        pauseMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+        AudioListener.pause = true;
+        Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     /// <summary>

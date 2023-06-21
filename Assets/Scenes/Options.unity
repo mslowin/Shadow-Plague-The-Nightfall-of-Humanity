@@ -640,6 +640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 310122801}
   - component: {fileID: 310122802}
+  - component: {fileID: 310122803}
   m_Layer: 5
   m_Name: SliderMusic
   m_TagString: Untagged
@@ -721,6 +722,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &310122803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310122800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ed24432abef0f4fb44317a6115c05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 310122802}
 --- !u!1 &452099585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,6 +1410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 951918159}
   - component: {fileID: 951918160}
+  - component: {fileID: 951918161}
   m_Layer: 5
   m_Name: SliderEffects
   m_TagString: Untagged
@@ -1477,6 +1492,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &951918161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951918158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ed24432abef0f4fb44317a6115c05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 951918160}
 --- !u!1 &1008112510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,6 +1726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1133122181}
   - component: {fileID: 1133122182}
+  - component: {fileID: 1133122183}
   m_Layer: 5
   m_Name: SliderDialogues
   m_TagString: Untagged
@@ -1779,6 +1808,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1133122183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133122180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ed24432abef0f4fb44317a6115c05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1133122182}
 --- !u!1 &1144581881
 GameObject:
   m_ObjectHideFlags: 0

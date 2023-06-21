@@ -19,6 +19,27 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Chnaging volume.
+    /// </summary>
+    /// <param name="volume">float value of volume</param>
+    /// <param name="audioType">Dial, FX, Msc</param>
+    public void ChangeVolume (float volume, string audioType)
+    {
+        if (volume > 1.0f)
+        {
+            volume = 1.0f;
+        }
+
+        foreach (Sound s in sounds)
+        {
+            if (s.name.Contains(audioType))
+            {
+                s.source.volume = volume;
+            }
+        }
+    }
+
     public void Play (string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
