@@ -429,6 +429,171 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d91278d40f69bf428e9546cbdbdcbbe, type: 3}
+--- !u!1 &291275259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 291275260}
+  - component: {fileID: 291275261}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &291275260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291275259}
+  m_LocalRotation: {x: -0, y: 0.062491793, z: -0, w: 0.99804556}
+  m_LocalPosition: {x: -8692.506, y: -1127.317, z: -1136.5151}
+  m_LocalScale: {x: 0.6032563, y: 0.6032563, z: 0.6032563}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1130391070}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &291275261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291275259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2334b2fb73e18504b9967810d66d85f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Dial_Wstep
+    clip: {fileID: 8300000, guid: 16969ecb19fedc040bdbdb69a2a696bf, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dial_LatarkaFound
+    clip: {fileID: 8300000, guid: 73332d84e36f8c641b35a82a6596ae57, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dial_NoBatteriesR
+    clip: {fileID: 8300000, guid: bec408ce220862d4ca923400f1120832, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dial_LatarkaRozlad
+    clip: {fileID: 8300000, guid: c99bf73dca0af404abed9ca587de9fd8, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dial_DoorClosed
+    clip: {fileID: 8300000, guid: c86ce6a9861371845a4f14c2fbc8674e, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dial_CardFound
+    clip: {fileID: 8300000, guid: d044cb17bc7c290458cb413bc5a012c1, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Msc_Background
+    clip: {fileID: 8300000, guid: b911662f2b94547e8a834cff9d26a788, type: 3}
+    volume: 0.186
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: Dial_Escape
+    clip: {fileID: 8300000, guid: b1aa3414e7d95cb418d46a5d6f9f9f18, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dial_DeadBody1
+    clip: {fileID: 8300000, guid: 3b690d97a2bb27b4b991ce1867e79553, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dial_Note2
+    clip: {fileID: 8300000, guid: b8d6548025e3f8c428bc2d11f6059609, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dial_DeadBody2
+    clip: {fileID: 8300000, guid: 2f04f6b481f27124381c5e2d8f7dd3e6, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dial_Note3
+    clip: {fileID: 8300000, guid: e2f04c89fa0645643b8345c8e872fc33, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dial_DeadBody3
+    clip: {fileID: 8300000, guid: 28e26313214144a41a3099f0608b37ab, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dial_Note4
+    clip: {fileID: 8300000, guid: c77a1728de7fd0549a35191e59201644, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dial_KartaDorNotSeen
+    clip: {fileID: 8300000, guid: 6b91a351421dce845b0ff11c7c5c4b90, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dial_Maszyna
+    clip: {fileID: 8300000, guid: 3e134e22a66018040af514100cd3eefe, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Dial_Radio
+    clip: {fileID: 8300000, guid: 26a4ab626f0858e4d838c16a8557c595, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: FX_Running
+    clip: {fileID: 8300000, guid: 65532ae070e6c474eb5099b6a3140ecd, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: FX_Walking
+    clip: {fileID: 8300000, guid: fc3b77f89d7470d47ba7794b703d5eaf, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: Dial_Ending
+    clip: {fileID: 8300000, guid: 1e209b4c4998bd24f8ddac0dce3d5b7e, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!1 &291742568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4763091458458972, guid: 01dd7a58c63283449b8d845a452090e8, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4763091458458972, guid: 01dd7a58c63283449b8d845a452090e8, type: 3}
       propertyPath: m_LocalScale.x
@@ -1479,116 +1644,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51c8e05702e94c3479bac5a4b1083071, type: 3}
---- !u!1 &705874554
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 705874555}
-  - component: {fileID: 705874558}
-  - component: {fileID: 705874557}
-  - component: {fileID: 705874556}
-  - component: {fileID: 705874559}
-  m_Layer: 0
-  m_Name: ENDING Trigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &705874555
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705874554}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.26, y: -1.16, z: -2.5}
-  m_LocalScale: {x: 0.41729075, y: 3.2588727, z: 3.5353777}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1130391070}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &705874556
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705874554}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &705874557
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705874554}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &705874558
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705874554}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &705874559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705874554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d03b4c5b09c0d84d80f9cd1e7d28309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &706540740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,6 +2330,7 @@ Transform:
   m_LocalScale: {x: 1.6576703, y: 1.6576703, z: 1.6576703}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 291275260}
   - {fileID: 1350384504}
   - {fileID: 7524932358704945028}
   - {fileID: 1697956732}
@@ -2284,7 +2340,6 @@ Transform:
   - {fileID: 1713259841}
   - {fileID: 1398927509}
   - {fileID: 1812782126}
-  - {fileID: 705874555}
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: -7.166, z: 0}
@@ -2420,7 +2475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cab9a19b330810f4e904d2a330b72cb0, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cab9a19b330810f4e904d2a330b72cb0, type: 3}
       propertyPath: m_LocalScale.x
@@ -2512,7 +2567,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1130391070}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 81.046, z: 0}
 --- !u!65 &1350384505
 BoxCollider:
@@ -2609,7 +2664,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1130391070}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1398927510
 BoxCollider:
@@ -3033,7 +3088,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1130391070}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!136 &1680417604
 CapsuleCollider:
@@ -3165,7 +3220,7 @@ Transform:
   m_Children:
   - {fileID: 1827863611}
   m_Father: {fileID: 1130391070}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -0.87, y: -103.433, z: 0}
 --- !u!81 &1697956733
 AudioListener:
@@ -3253,8 +3308,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster: {fileID: 1713259840}
   doorAnimator: {fileID: 7524932358705040293}
-  timeToMonsterAppear: 20
-  timeToDoorOpen: 54
+  timeToMonsterAppear: 35
+  timeToDoorOpen: 69
+  timeToCredits: 73
 --- !u!1 &1704564477
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,7 +3444,7 @@ Transform:
   - {fileID: 1782256769}
   - {fileID: 595540932}
   m_Father: {fileID: 1130391070}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1713259842
 Animator:
@@ -3781,7 +3837,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4000010984663340, guid: 706e6270ca3a68a46a4455daaeaeafd1, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4000010984663340, guid: 706e6270ca3a68a46a4455daaeaeafd1, type: 3}
       propertyPath: m_LocalScale.x
@@ -4897,7 +4953,7 @@ Transform:
   - {fileID: 7524932358704945036}
   - {fileID: 7524932358704945038}
   m_Father: {fileID: 1130391070}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -7.33, z: 0}
 --- !u!4 &7524932358704945034
 Transform:
