@@ -110,5 +110,14 @@ public class SC_FPSController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
+
+        if (transform.position.y > 2.096715f)
+        {
+            Vector3 position;
+            position.x = transform.position.x;
+            position.y = 2.096715f;
+            position.z = transform.position.z;
+            transform.position = position;
+        }
     }
 }
