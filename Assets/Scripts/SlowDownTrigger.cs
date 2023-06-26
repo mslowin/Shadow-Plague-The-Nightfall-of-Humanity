@@ -14,6 +14,8 @@ public class SlowDownTrigger : MonoBehaviour
     /// </summary>
     public Collider collision;
 
+    //private float defaultSpeed = 10f;
+
     // Update is called once per frame
     void Update()
     {
@@ -23,7 +25,7 @@ public class SlowDownTrigger : MonoBehaviour
     {
         if (other.CompareTag("Monster"))
         {
-            monster.moveSpeed /= 2f;
+            monster.moveSpeed /= 4f;
         }
     }
 
@@ -31,7 +33,8 @@ public class SlowDownTrigger : MonoBehaviour
     {
         if (other.CompareTag("Monster"))
         {
-            monster.moveSpeed *= 2f;
+            // monster.moveSpeed = defaultSpeed;
+            monster.moveSpeed *= 4f;
         }
 
     }

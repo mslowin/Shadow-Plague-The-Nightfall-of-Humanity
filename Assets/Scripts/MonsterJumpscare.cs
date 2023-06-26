@@ -29,6 +29,7 @@ public class MonsterJumpscare : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            FindObjectOfType<AudioManager>().Play("FX_Jumpscare");
             player.SetActive(false);
             monsterAnimator.SetTrigger("Jumpscare");
             StartCoroutine(Jumpscare());

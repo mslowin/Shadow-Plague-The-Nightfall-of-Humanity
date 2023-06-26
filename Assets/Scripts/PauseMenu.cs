@@ -15,6 +15,14 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     public GameObject optionsMenu;
 
+    public GameObject note1;
+    public GameObject note2;
+    public GameObject note3;
+    public GameObject note4;
+    private bool note1Active = false;
+    private bool note2Active = false;
+    private bool note3Active = false;
+    private bool note4Active = false;
     /// <summary>
     /// Name of the main menu scene.
     /// </summary>
@@ -43,6 +51,23 @@ public class PauseMenu : MonoBehaviour
                 playerScript.enabled = true;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
+                if (note1.activeSelf == false && note1Active)
+                {
+                    note1.SetActive(true);
+                    note1Active = false;
+                } else if (note2.activeSelf == false && note2Active)
+                {
+                    note2.SetActive(true);
+                    note2Active = false;
+                } else if (note3.activeSelf == false && note3Active)
+                {
+                    note3.SetActive(true);
+                    note3Active = false;
+                } else if (note4.activeSelf == false && note4Active)
+                {
+                    note4.SetActive(true);
+                    note4Active = false;
+                }
             }
 
             if (toggle)
@@ -53,6 +78,23 @@ public class PauseMenu : MonoBehaviour
                 playerScript.enabled = false;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+                if (note1.activeSelf)
+                {
+                    note1.SetActive(false);
+                    note1Active = true;
+                } else if (note2.activeSelf)
+                {
+                    note2.SetActive(false);
+                    note2Active = true;
+                } else if (note3.activeSelf)
+                {
+                    note3.SetActive(false);
+                    note3Active = true;
+                } else if (note4.activeSelf)
+                {
+                    note4.SetActive(false);
+                    note4Active = true;
+                }
             }
         }
     }
